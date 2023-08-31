@@ -4,6 +4,7 @@ import ColorPreview from '../components/ColorPreview';
 
 const Home = ({ navigation }) => {
   const [colorPalettes, setColorPalettes] = useState([]);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   const fetchColorPalettes = useCallback(async () => {
     const result = await fetch(
@@ -19,6 +20,14 @@ const Home = ({ navigation }) => {
     fetchColorPalettes();
   }, [fetchColorPalettes]);
 
+  const handleRefresh = useCallback(async () => {
+    setIsRefreshing(true);
+    await fetchColorPalettes();
+    setTimeout(() => {
+      setIsRefreshing(false);
+    }, 1000);
+  }, [fetchColorPalettes]);
+
   return (
     <FlatList
       style={styles.container}
@@ -32,6 +41,8 @@ const Home = ({ navigation }) => {
           colorPalette={item}
         />
       )}
+      refreshing={isRefreshing}
+      onRefresh={handleRefresh}
     />
   );
 };
