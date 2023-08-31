@@ -1,51 +1,22 @@
 import React from "react";
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import ColorBox from "./components/ColorBox";
 
 const App = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <Text style={styles.titleText}>Here are some boxes of different colours</Text>
-        <View style={[styles.box, styles.cyan]}>
-          <Text style={styles.boxText}>Cyan: #2aa198</Text>
-        </View>
-        <View style={[styles.box, styles.blue]}>
-          <Text style={styles.boxText}>Blue: #268bd2</Text>
-        </View>
-        <View style={[styles.box, styles.magenta]}>
-          <Text style={styles.boxText}>Magenta: #d33682</Text>
-        </View>
-        <View style={[styles.box, styles.orange]}>
-          <Text style={styles.boxText}>Orange: #cb4b16</Text>
-        </View>
+        <ColorBox colorName="Cyan" hexCode="#2aa198" />
+        <ColorBox colorName="Blue" hexCode="#268bd2" />
+        <ColorBox colorName="Magenta" hexCode="#d33682" />
+        <ColorBox colorName="Orange" hexCode="#cb4b16" />
       </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  cyan: {
-    backgroundColor: '#2aa198',
-  },
-  blue: {
-    backgroundColor: '#268bd2',
-  },
-  magenta: {
-    backgroundColor: '#d33682',
-  },
-  orange: {
-    backgroundColor: '#cb4b16',
-  },
-  box: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    padding: 10,
-  },
-  boxText: {
-    color: 'white',
-    fontWeight: 'bold',
-  },
   titleText: {
     marginBottom: 10,
     fontSize: 18,
