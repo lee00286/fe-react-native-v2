@@ -1,9 +1,9 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import ColorBox from '../components/ColorBox';
 
 const ColorPalette = ({ route }) => {
-  const { paletteName, colors } = route.params;
+  const { colors } = route.params;
   return (
     <FlatList
       style={styles.container}
