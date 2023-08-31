@@ -1,6 +1,11 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 const ColorPreview = ({ onHandlePress, colorPalette }) => {
   const { paletteName, colors } = colorPalette;
